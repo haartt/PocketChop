@@ -1,2 +1,2 @@
-# PocketChopApp.github.io
-pocketChop app privacy & contacts
+PocketChop
+app privacy & contacts
