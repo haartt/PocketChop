@@ -1,2 +1,1 @@
-PocketChop
-app privacy & contacts
+PocketChop app privacy & contacts
