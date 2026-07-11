@@ -5,84 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PocketChop — Pocket Sampler for iPhone &amp; iPad</title>
 <meta name="description" content="PocketChop turns any track into an instrument. Chop, play, sequence and record — a pocket sampler for iOS.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:      #121213;
-    --panel:   #1a1a1c;
-    --border:  rgba(255,255,255,0.07);
-    --dim:     rgba(255,255,255,0.28);
-    --label:   rgba(255,255,255,0.55);
-    --full:    rgba(255,255,255,0.90);
-    --orange:  #fa9414;
-    --amber:   #ffc200;
-    --cyan:    #33d9bf;
+    --bg:        #ffffff;
+    --bg-alt:    #f5f5f7;
+    --text:      #1d1d1f;
+    --secondary: #6e6e73;
+    --tertiary:  #86868b;
+    --blue:      #0066cc;
+    --radius:    18px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:        #000000;
+      --bg-alt:    #1c1c1e;
+      --text:      #f5f5f7;
+      --secondary: #a1a1a6;
+      --tertiary:  #86868b;
+      --blue:      #2997ff;
+    }
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     background: var(--bg);
-    color: var(--full);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Helvetica Neue", sans-serif;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.6;
+    line-height: 1.5;
+    font-size: 17px;
   }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 22px; }
 
-  header { padding: 96px 0 64px; }
+  header { text-align: center; padding: 110px 0 80px; }
   .wordmark {
-    font-size: 56px; font-weight: 900; letter-spacing: -1.5px; line-height: 0.95;
+    font-size: clamp(48px, 10vw, 72px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
   }
-  .sub-jp { color: var(--amber); font-size: 15px; margin-top: 14px; font-weight: 500; }
-  .tagline { color: var(--label); font-size: 19px; margin-top: 22px; max-width: 420px; }
+  .sub-jp {
+    color: var(--tertiary);
+    font-size: 15px;
+    margin-top: 12px;
+    letter-spacing: 0.2em;
+  }
+  .tagline {
+    color: var(--secondary);
+    font-size: 21px;
+    font-weight: 400;
+    margin: 24px auto 0;
+    max-width: 440px;
+    letter-spacing: -0.01em;
+  }
 
-  section { padding: 40px 0; border-top: 1px solid var(--border); }
+  section { padding: 56px 0; }
   h2 {
-    font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
-    color: var(--orange); margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
   }
-  p { color: var(--label); font-size: 15px; margin-bottom: 14px; }
-  p strong { color: var(--full); font-weight: 600; }
-  ul { list-style: none; }
-  ul li {
-    color: var(--label); font-size: 15px; padding: 8px 0 8px 22px; position: relative;
-  }
-  ul li::before {
-    content: ""; position: absolute; left: 0; top: 15px;
-    width: 8px; height: 8px; border-radius: 2px; background: var(--cyan);
-  }
-  a { color: var(--cyan); text-decoration: none; }
+  p { color: var(--secondary); font-size: 17px; margin-bottom: 16px; }
+  p strong { color: var(--text); font-weight: 600; }
+  a { color: var(--blue); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
-  .privacy-badge {
-    display: inline-block; background: var(--panel); border: 1px solid var(--border);
-    border-radius: 12px; padding: 16px 20px; margin: 6px 0 18px;
-    color: var(--full); font-size: 15px; font-weight: 600;
+  .card {
+    background: var(--bg-alt);
+    border-radius: var(--radius);
+    padding: 28px;
   }
-  footer { padding: 48px 0 72px; border-top: 1px solid var(--border); }
-  footer p { font-size: 13px; color: var(--dim); margin: 0; }
+  ul.features { list-style: none; }
+  ul.features li {
+    color: var(--secondary);
+    font-size: 17px;
+    padding: 13px 0;
+  }
+  ul.features li + li { border-top: 1px solid rgba(128,128,128,0.18); }
+  ul.features li strong { color: var(--text); font-weight: 600; }
+
+  .privacy-badge {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+  .updated { font-size: 14px; color: var(--tertiary); margin-top: 20px; margin-bottom: 0; }
+
+  footer { text-align: center; padding: 56px 0 72px; }
+  footer p { font-size: 13px; color: var(--tertiary); margin: 0; }
+  footer a { color: var(--tertiary); text-decoration: underline; text-underline-offset: 2px; }
+  footer a:hover { color: var(--text); }
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <div class="wordmark">POCKET<br>CHOP</div>
+    <div class="wordmark">PocketChop</div>
     <div class="sub-jp">サンプラー</div>
     <p class="tagline">Turn any track into an instrument. Chop, play, sequence and record — a pocket sampler for iPhone and iPad.</p>
   </header>
 
   <section id="features">
     <h2>Features</h2>
-    <ul>
-      <li>Waveform chopping — drag to slice, pinch to zoom, up to 16 chops per sample</li>
-      <li>16 pads with per-pad attack, release, low-pass filter, level, delay, reverb and pitch</li>
-      <li>Pattern sequencer with count-in, up to 8 patterns per session, adjustable loop length and BPM</li>
-      <li>Record your full mix to M4A, or capture raw audio with the field recorder</li>
-      <li>Sessions — save everything and pick up where you left off</li>
-      <li>No account. No subscription.</li>
-    </ul>
+    <div class="card">
+      <ul class="features">
+        <li><strong>Waveform chopping.</strong> Drag to slice, pinch to zoom, up to 16 chops per sample.</li>
+        <li><strong>16 pads</strong> with per-pad attack, release, low-pass filter, level, delay, reverb and pitch.</li>
+        <li><strong>Pattern sequencer</strong> with count-in, up to 8 patterns per session, adjustable loop length and BPM.</li>
+        <li><strong>Record</strong> your full mix to M4A, or capture raw audio with the field recorder.</li>
+        <li><strong>Sessions.</strong> Save everything and pick up where you left off.</li>
+        <li><strong>No account. No subscription.</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <h2>Privacy</h2>
+    <div class="card">
+      <p class="privacy-badge">PocketChop collects no data. None.</p>
+      <p><strong>Audio stays on your device.</strong> Songs you import, recordings you make with the microphone, and everything you create in the app are stored locally on your iPhone or iPad and are never uploaded, transmitted or shared with anyone.</p>
+      <p><strong>Storage access</strong> is required only to import audio files from your device, and to save your sketches and demos.</p>
+      <p><strong>Microphone access</strong> is requested only when you use the field recorder, and the audio it captures is saved only to your device.</p>
+      <p><strong>No tracking.</strong> PocketChop contains no analytics, no advertising, no third-party SDKs, and no account system. It makes no network requests.</p>
+      <p><strong>Sharing is under your control.</strong> If you export a chop or recording, it goes only where you send it via the iOS share sheet.</p>
+      <p class="updated">If this policy ever changes, the update will be published on this page. Last updated: July 10, 2026.</p>
+    </div>
   </section>
 
   <section id="support">
@@ -90,18 +140,8 @@
     <p>Questions, bug reports or feature requests — email <a href="mailto:aka.hart.prods@gmail.com">aka.hart.prods@gmail.com</a> and you'll get a reply as soon as possible.</p>
   </section>
 
-  <section id="privacy">
-    <h2>Privacy Policy</h2>
-    <div class="privacy-badge">PocketChop collects no data. None.</div>
-    <p><strong>Audio stays on your device.</strong> Songs you import, recordings you make with the microphone, and everything you create in the app are stored locally on your iPhone or iPad and are never uploaded, transmitted or shared with anyone.</p>
-    <p><strong>Microphone access</strong> is requested only when you use the field recorder, and the audio it captures is saved only to your device.</p>
-    <p><strong>No tracking.</strong> PocketChop contains no analytics, no advertising, no third-party SDKs, and no account system. It makes no network requests.</p>
-    <p><strong>Sharing is under your control.</strong> If you export a chop or recording, it goes only where you send it via the iOS share sheet.</p>
-    <p>If this policy ever changes, the update will be published on this page. Last updated: July 10, 2026.</p>
-  </section>
-
   <footer>
-    <p>© 2026 Fabio Antonucci · PocketChop for iOS</p>
+    <p>© 2026 <a href="https://haartt.github.io">Fabio Antonucci</a> · PocketChop for iOS</p>
   </footer>
 
 </div>
