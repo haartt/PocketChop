@@ -1,2 +1,2 @@
 # PocketChopApp
-PocketChop App
+pocketChop app privacy & contacts
