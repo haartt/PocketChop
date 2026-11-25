@@ -2,7 +2,7 @@
 
 **Turn any track into an instrument.** Chop, play, sequence and record — a pocket sampler for iPhone and iPad.
 
-This repository hosts the PocketChop website: app info, support contact, and the privacy policy (see [`index.html`](index.html)).
+This repository hosts the PocketChop website: app info, support contact, and the privacy policy (see https://haartt.github.io/PocketChop/).
 
 ## Features
 
