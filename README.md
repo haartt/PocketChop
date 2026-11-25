@@ -1,4 +1,4 @@
-# PocketChop
+# PocketChop (WWDC 2026 Winner)
 
 **Turn any track into an instrument.** Chop, play, sequence and record — a pocket sampler for iPhone and iPad.
 
