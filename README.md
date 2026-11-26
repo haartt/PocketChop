@@ -6,11 +6,12 @@
 
 **Turn any track into an instrument.** Chop, play, sequence and record — a pocket sampler for iPhone and iPad.
 
-<p align="center">
-  <img src="assets/ipad.png" height="480" alt="PocketChop on iPad">
-  &nbsp;&nbsp;
-  <img src="assets/iphone.png" height="480" alt="PocketChop on iPhone — FX and envelope panel">
-</p>
+<table align="center">
+  <tr>
+    <td><img src="assets/ipad.png" width="360" alt="PocketChop on iPad"></td>
+    <td><img src="assets/iphone.png" width="222" alt="PocketChop on iPhone — FX and envelope panel"></td>
+  </tr>
+</table>
 
 This repository hosts the PocketChop website: app info, support contact, and the privacy policy (see https://haartt.github.io/PocketChop/).
 
