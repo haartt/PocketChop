@@ -1,6 +1,16 @@
+<p align="center">
+  <img src="assets/icon.png" width="128" alt="PocketChop app icon">
+</p>
+
 # PocketChop (WWDC 2026 Winner)
 
 **Turn any track into an instrument.** Chop, play, sequence and record — a pocket sampler for iPhone and iPad.
+
+<p align="center">
+  <img src="assets/ipad.png" height="480" alt="PocketChop on iPad">
+  &nbsp;&nbsp;
+  <img src="assets/iphone.png" height="480" alt="PocketChop on iPhone — FX and envelope panel">
+</p>
 
 This repository hosts the PocketChop website: app info, support contact, and the privacy policy (see https://haartt.github.io/PocketChop/).
 
